@@ -266,3 +266,115 @@ body {
     .contact-inner { padding: 42px 22px; }
     .hero::after { display: none; }
 }
+
+/* ============================================================
+   IMMERSIVE LAYER — loader, starfield, noise, cursor, motion
+   ============================================================ */
+
+/* Page loader */
+.loader {
+    position: fixed; inset: 0; z-index: 1000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+    background: var(--bg);
+    transition: opacity .7s ease, visibility .7s ease;
+}
+.loader.done { opacity: 0; visibility: hidden; }
+.loader-mark { font-size: 2.6rem; font-weight: 700; letter-spacing: -.07em; }
+.loader-mark span { color: var(--accent); }
+.loader-line { width: 180px; height: 2px; background: var(--line); overflow: hidden; border-radius: 2px; }
+.loader-line span { display: block; width: 40%; height: 100%; background: var(--accent); border-radius: 2px; animation: loaderSlide 1s ease-in-out infinite; }
+@keyframes loaderSlide { 0% { transform: translateX(-120%); } 100% { transform: translateX(420%); } }
+
+/* Starfield + noise + ambient */
+#starfield { position: fixed; inset: 0; z-index: -3; width: 100%; height: 100%; pointer-events: none; }
+.noise {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none; opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Cursor spotlight */
+.spotlight {
+    position: fixed; z-index: -1; top: 0; left: 0; width: 540px; height: 540px; pointer-events: none;
+    transform: translate(-50%, -50%); opacity: 0; transition: opacity .5s ease;
+    background: radial-gradient(circle, rgba(64, 223, 139, .08), transparent 62%);
+}
+@media (hover: hover) and (pointer: fine) { .spotlight.active { opacity: 1; } }
+
+/* Scroll progress */
+.scroll-progress { position: fixed; z-index: 200; top: 0; left: 0; width: 100%; height: 2px; background: transparent; }
+.scroll-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), #9ff5c4); box-shadow: 0 0 12px rgba(64, 223, 139, .6); }
+
+/* Hero — animated gradient name + orbits + glow */
+.hero h1 em {
+    background: linear-gradient(115deg, var(--accent), #b6f7d3 40%, var(--accent) 75%);
+    background-size: 220% 220%;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+.hero-visual { position: relative; }
+.profile-glow {
+    position: absolute; inset: -6% -6% -10%; z-index: -1; border-radius: 50%;
+    background: radial-gradient(circle, rgba(64, 223, 139, .22), transparent 68%);
+    filter: blur(34px); animation: glowPulse 5s ease-in-out infinite;
+}
+@keyframes glowPulse { 0%, 100% { opacity: .55; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.04); } }
+.orbit {
+    position: absolute; left: 50%; top: 50%; z-index: -1; border-radius: 50%;
+    border: 1px solid rgba(64, 223, 139, .12); transform: translate(-50%, -50%);
+}
+.orbit-one { width: 118%; height: 118%; animation: spin 26s linear infinite; }
+.orbit-two { width: 138%; height: 138%; border-style: dashed; border-color: rgba(64, 223, 139, .07); animation: spin 40s linear infinite reverse; }
+.orbit-one::before {
+    content: ""; position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; margin-left: -4px;
+    border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent);
+}
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.profile-frame img { will-change: transform; }
+
+/* Stats band — animated counters */
+.stats-band {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    margin-top: 1px; background: var(--line); border: 1px solid var(--line); border-top: 0;
+}
+.stat { padding: 30px 22px; background: var(--bg); transition: background .25s; }
+.stat:hover { background: rgba(64, 223, 139, .04); }
+.stat strong { display: block; font-size: clamp(2.2rem, 4vw, 3.1rem); font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
+.stat small { display: block; margin-top: 10px; color: var(--muted); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+
+/* Reveal — richer entrance + stagger */
+.reveal { transform: translateY(26px); transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1); }
+
+/* Magnetic buttons + card tilt */
+.button, .nav-cta { will-change: transform; }
+.skill-card, .fact-card, .achievement-card, .certificate-card, .stat { transform-style: preserve-3d; }
+
+/* Card sheen on featured projects */
+.project-gallery button::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, .12), transparent 70%);
+    transition: opacity .4s; mix-blend-mode: overlay;
+}
+.project-gallery button:hover::after { opacity: 1; }
+.project-gallery button { position: relative; }
+
+/* Link underline sweep for text links */
+.text-link, .contact-email { position: relative; }
+
+/* Section kicker number — subtle accent box */
+.section-kicker span { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; }
+
+@media (max-width: 900px) {
+    .stats-band { grid-template-columns: 1fr 1fr; }
+    .orbit-two { display: none; }
+}
+@media (max-width: 620px) {
+    .stats-band { grid-template-columns: 1fr 1fr; }
+    .stat { padding: 22px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader-line span, .hero h1 em, .profile-glow, .orbit { animation: none !important; }
+    #starfield, .spotlight { display: none; }
+}
