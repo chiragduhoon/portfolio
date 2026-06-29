@@ -378,38 +378,3 @@ body {
     .loader-line span, .hero h1 em, .profile-glow, .orbit { animation: none !important; }
     #starfield, .spotlight { display: none; }
 }
-
-/* PDF certificate cards */
-.certificate-doc {
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
-    width: 100%; height: 300px; border: 1px solid var(--line); border-radius: 10px;
-    background: linear-gradient(160deg, var(--surface), rgba(64, 223, 139, .04));
-    transition: background .25s, transform .25s; cursor: pointer;
-}
-.certificate-doc:hover { background: linear-gradient(160deg, rgba(64, 223, 139, .09), rgba(64, 223, 139, .02)); }
-.certificate-doc .doc-icon {
-    font-size: .72rem; letter-spacing: .18em; padding: 11px 18px;
-    border: 1px solid var(--accent); border-radius: 7px; color: var(--accent); font-weight: 600;
-}
-.certificate-doc .doc-view { color: var(--muted); font-size: .7rem; letter-spacing: .04em; }
-.certificate-doc:hover .doc-view { color: var(--text); }
-
-/* Resume download band */
-.resume-band {
-    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px;
-    padding: 50px 55px; border: 1px solid var(--line); border-radius: 14px;
-    background: linear-gradient(125deg, var(--surface), rgba(64, 223, 139, .04));
-}
-.resume-text h2 { margin: 14px 0 16px; font-size: clamp(1.9rem, 3.4vw, 2.9rem); line-height: 1.1; letter-spacing: -.04em; font-weight: 500; }
-.resume-text p { max-width: 480px; color: var(--muted); font-size: .82rem; line-height: 1.8; }
-.resume-actions { display: flex; flex-direction: column; gap: 14px; }
-.resume-actions .button { justify-content: center; }
-
-@media (max-width: 880px) {
-    .resume-band { grid-template-columns: 1fr; padding: 38px 28px; gap: 28px; }
-    .resume-actions { flex-direction: row; flex-wrap: wrap; }
-    .resume-actions .button { flex: 1; }
-}
-@media (max-width: 620px) {
-    .certificate-doc { height: 210px; }
-}
