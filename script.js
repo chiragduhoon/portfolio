@@ -101,6 +101,21 @@ lightbox.addEventListener("click", e => { if (e.target === lightbox) lightbox.cl
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
+/* ---------- Certifications: show more / less ---------- */
+const certGrid = document.querySelector(".certificate-grid");
+const certToggle = document.querySelector(".cert-toggle");
+if (certGrid && certToggle) {
+    const hiddenCount = certGrid.querySelectorAll(".cert-extra").length;
+    certToggle.addEventListener("click", () => {
+        const expanded = certGrid.classList.toggle("expanded");
+        certToggle.setAttribute("aria-expanded", String(expanded));
+        certToggle.innerHTML = expanded
+            ? "Show less <span>−</span>"
+            : `See all certifications <span>+${hiddenCount}</span>`;
+        if (!expanded) certGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+}
+
 /* ---------- Cursor spotlight + magnetic + tilt (pointer-capable only) ---------- */
 if (finePointer && !reduceMotion) {
     const spotlight = document.querySelector(".spotlight");

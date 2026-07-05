@@ -127,6 +127,10 @@ img { display: block; max-width: 100%; }
 .certificate-card > div { padding: 22px; }
 .certificate-card h3 { margin: 9px 0 5px; font-size: .95rem; font-weight: 500; }
 .certificate-card p { color: var(--muted); font-size: .69rem; }
+.certificate-grid:not(.expanded) .cert-extra { display: none; }
+.cert-toggle-wrap { display: flex; justify-content: center; margin-top: 28px; }
+.cert-toggle span { color: var(--accent); }
+.project-links { display: flex; gap: 28px; }
 .coding-profile { display: grid; grid-template-columns: 220px 1fr auto; align-items: center; gap: 25px; margin-top: 35px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .coding-profile > div { display: flex; align-items: center; gap: 14px; }
 .code-bracket { color: var(--accent); font-weight: 600; }
