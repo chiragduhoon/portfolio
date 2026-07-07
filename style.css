@@ -121,6 +121,19 @@ img { display: block; max-width: 100%; }
 .achievement-copy h3 { margin: 9px 0 14px; font-size: 1.1rem; font-weight: 500; }
 .achievement-copy ul { display: flex; flex-wrap: wrap; gap: 7px 15px; list-style: none; color: var(--muted); font-size: .64rem; }
 
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 240px; gap: 1px; margin-top: 60px; background: var(--line); border: 1px solid var(--line); }
+.gallery-item { position: relative; overflow: hidden; background: var(--bg); border: 0; cursor: pointer; }
+.gallery-featured { grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-tag {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 16px 13px; text-align: left;
+    color: var(--accent); font-size: .61rem; letter-spacing: .12em; text-transform: uppercase;
+    background: linear-gradient(180deg, transparent, rgba(5, 5, 5, .82));
+    opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s;
+}
+.gallery-item:hover .gallery-tag, .gallery-item:focus-visible .gallery-tag { opacity: 1; transform: translateY(0); }
+
 .certificate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 55px; background: var(--line); border: 1px solid var(--line); }
 .certificate-card { background: var(--bg); }
 .certificate-image { width: 100%; height: 300px; }
@@ -189,6 +202,9 @@ footer { max-width: var(--max); margin: auto; padding: 30px 0 40px; display: fle
     .section { padding: 80px 0; }
     .section-title h2, .contact h2 { font-size: 2.8rem; }
     .facts-grid, .skills-grid, .certificate-grid, .achievement-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 230px; }
+    .gallery-featured { grid-row: auto; }
+    .gallery-tag { opacity: 1; transform: none; }
     .fact-card { min-height: 125px; border-right: 0; border-bottom: 1px solid var(--line); }
     .skill-card, .skill-card + .skill-card { min-height: 230px; padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
     .skill-card h3 { margin-top: 45px; }
