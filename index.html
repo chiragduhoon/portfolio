@@ -139,36 +139,39 @@
             </div>
 
             <article class="featured-project reveal">
-                <div class="project-gallery project-food">
-                    <button class="gallery-main lightbox-trigger" data-image="gallery/FOOD1.jpeg" aria-label="View food detection project image"><img src="gallery/FOOD1.jpeg" alt="Indian food detection project interface" loading="lazy"></button>
-                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD2.jpeg" aria-label="View food classification image"><img src="gallery/FOOD2.jpeg" alt="Food classification result" loading="lazy"></button>
-                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD3.jpeg" aria-label="View calorie estimation image"><img src="gallery/FOOD3.jpeg" alt="Calorie estimation result" loading="lazy"></button>
+                <div class="project-gallery single-image">
+                    <button class="gallery-main lightbox-trigger" data-image="projects/hinglishguard.webp" aria-label="View HinglishGuard — Hinglish Moderation Bot screenshot"><img src="projects/hinglishguard.webp" alt="HinglishGuard bot in Discord removing abusive messages and posting a warning" loading="lazy"></button>
                     <span class="project-number">01</span>
                 </div>
                 <div class="project-info">
-                    <span class="project-type">Computer Vision · Featured Project</span>
-                    <h3>Indian Food Classification & Calorie Estimation</h3>
-                    <p>Built a YOLO-based computer vision system capable of detecting Indian food items and estimating calories through an interactive Streamlit dashboard.</p>
-                    <div class="feature-list">
-                        <span>Food Detection</span><span>Calorie Estimation</span><span>Multi-class Classification</span><span>Interactive Web Interface</span>
+                    <span class="project-type">NLP · Discord Bot · Featured Project</span>
+                    <h3>HinglishGuard — Hinglish Moderation Bot</h3>
+                    <p>A Discord bot that removes abuse and religious hate in Hindi and Hinglish, and sends uncertain messages to a human moderator. Built on fine-tuned transformer models.</p>
+                    <div class="feature-list"><span>Macro-F1 0.744 → 0.800</span><span>Decodes disguised slurs</span><span>Live on Discord</span><span>Human review for edge cases</span></div>
+                    <div class="tech-row"><span>PyTorch</span><span>HingRoBERTa</span><span>discord.py</span><span>Ollama</span></div>
+                    <div class="project-links">
+                        <a class="text-link" href="https://github.com/chiragduhoon/hinglishguard" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
                     </div>
-                    <div class="tech-row"><span>Python</span><span>YOLO</span><span>Streamlit</span><span>OpenCV</span><span>Pillow</span></div>
                 </div>
             </article>
 
             <article class="featured-project project-reverse reveal">
                 <div class="project-gallery single-image">
-                    <button class="gallery-main lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG" aria-label="View Deep Sight project image"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge team and project" loading="lazy"></button>
+                    <button class="gallery-main lightbox-trigger" data-image="projects/bennett-one.webp" aria-label="View BENNETT ONE — University Assistant screenshot"><img src="projects/bennett-one.webp" alt="BENNETT ONE answer showing a 75% attendance check with page-level citations" loading="lazy"></button>
                     <span class="project-number">02</span>
                 </div>
                 <div class="project-info">
-                    <span class="project-type">Computer Vision · Hackathon Build</span>
-                    <h3>Vehicle Number Plate Detection & Recognition</h3>
-                    <p>Built during the Deep Sight Challenge using computer vision and OCR techniques to detect vehicle number plates and extract text under real-world conditions.</p>
-                    <div class="feature-list"><span>Plate Detection</span><span>OCR Recognition</span><span>Real-world Testing</span><span>Rapid Prototyping</span></div>
-                    <div class="tech-row"><span>Python</span><span>Computer Vision</span><span>OCR</span><span>OpenCV</span></div>
+                    <span class="project-type">AI · RAG · Featured Project</span>
+                    <h3>BENNETT ONE — University Assistant</h3>
+                    <p>Answers students' questions from 363 official university documents and cites the exact page. Eligibility and attendance are decided by tested code, never guessed by the AI.</p>
+                    <div class="feature-list"><span>31/31 on real student questions</span><span>Page-level citations</span><span>Self-hosted LLM</span><span>Rule engine, not guesses</span></div>
+                    <div class="tech-row"><span>LangGraph</span><span>FastAPI</span><span>Qdrant</span><span>React</span></div>
+                    <div class="project-links">
+                        <a class="text-link" href="https://github.com/chiragduhoon/bennett-one" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+                    </div>
                 </div>
             </article>
+
             <article class="featured-project reveal">
                 <div class="project-gallery project-food">
                     <button class="gallery-main lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221604.png" aria-label="View Sanjeevani doctor dashboard"><img src="sanjeevani/Screenshot 2026-06-25 221604.png" alt="Sanjeevani doctor dashboard with patient queue and AI clinical summary" loading="lazy"></button>
@@ -188,6 +191,58 @@
                         <a class="text-link" href="https://sanjeevani-frontend-zaah.onrender.com/" target="_blank" rel="noreferrer">Live Demo <span>↗</span></a>
                         <a class="text-link" href="https://github.com/chiragduhoon/sanjeevani-ai-triage" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
                     </div>
+                </div>
+            </article>
+
+            <article class="featured-project project-reverse reveal">
+                <div class="project-gallery single-image">
+                    <button class="gallery-main lightbox-trigger" data-image="projects/stocklens.webp" aria-label="View StockLens — Nifty 50 Research screenshot"><img src="projects/stocklens.webp" alt="StockLens Infosys view with real price history, analyst consensus and median target" loading="lazy"></button>
+                    <span class="project-number">04</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">AI · Fintech</span>
+                    <h3>StockLens — Nifty 50 Research</h3>
+                    <p>Real prices, financials, analyst consensus and news for all 50 Nifty companies, with news sentiment from FinBERT and an AI that cites its evidence.</p>
+                    <div class="feature-list"><span>All 50 Nifty stocks</span><span>Real market data</span><span>FinBERT sentiment</span><span>Evidence-cited answers</span></div>
+                    <div class="tech-row"><span>FastAPI</span><span>React</span><span>FinBERT</span><span>Ollama</span></div>
+                    <div class="project-links">
+                        <a class="text-link" href="https://github.com/chiragduhoon/stocklens" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="featured-project reveal">
+                <div class="project-gallery project-food">
+                    <button class="gallery-main lightbox-trigger" data-image="gallery/FOOD1.jpeg" aria-label="View food detection project image"><img src="gallery/FOOD1.jpeg" alt="Indian food detection project interface" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD2.jpeg" aria-label="View food classification image"><img src="gallery/FOOD2.jpeg" alt="Food classification result" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD3.jpeg" aria-label="View calorie estimation image"><img src="gallery/FOOD3.jpeg" alt="Calorie estimation result" loading="lazy"></button>
+                    <span class="project-number">05</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">Computer Vision · Featured Project</span>
+                    <h3>Indian Food Classification & Calorie Estimation</h3>
+                    <p>Built a YOLO-based computer vision system capable of detecting Indian food items and estimating calories through an interactive Streamlit dashboard.</p>
+                    <div class="feature-list">
+                        <span>Food Detection</span><span>Calorie Estimation</span><span>Multi-class Classification</span><span>Interactive Web Interface</span>
+                    </div>
+                    <div class="tech-row"><span>Python</span><span>YOLO</span><span>Streamlit</span><span>OpenCV</span><span>Pillow</span></div>
+                    <div class="project-links">
+                        <a class="text-link" href="https://github.com/chiragduhoon/nutriscan" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="featured-project project-reverse reveal">
+                <div class="project-gallery single-image">
+                    <button class="gallery-main lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG" aria-label="View Deep Sight project image"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge team and project" loading="lazy"></button>
+                    <span class="project-number">06</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">Computer Vision · Hackathon Build</span>
+                    <h3>Vehicle Number Plate Detection & Recognition</h3>
+                    <p>Built during the Deep Sight Challenge using computer vision and OCR techniques to detect vehicle number plates and extract text under real-world conditions.</p>
+                    <div class="feature-list"><span>Plate Detection</span><span>OCR Recognition</span><span>Real-world Testing</span><span>Rapid Prototyping</span></div>
+                    <div class="tech-row"><span>Python</span><span>Computer Vision</span><span>OCR</span><span>OpenCV</span></div>
                 </div>
             </article>
 
