@@ -3,297 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Chirag Duhoon, an AI Engineering student building intelligent systems and computer vision projects.">
+    <meta name="theme-color" content="#050505">
     <title>Chirag Duhoon | AI Engineering Student</title>
-    <meta name="description" content="Chirag Duhoon is an AI engineering student at Bennett University building computer vision and real-time AI systems. Drono War 1.0 winner, builder of Sanjeevani.">
-    <meta name="theme-color" content="#0b0d0c">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="canonical" href="https://chiragduhoon.github.io/portfolio/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Chirag Duhoon | AI Engineering Student">
-    <meta property="og:description" content="Computer vision and real-time AI systems. Drono War 1.0 winner, builder of Sanjeevani.">
-    <meta property="og:url" content="https://chiragduhoon.github.io/portfolio/">
-    <meta property="og:image" content="https://chiragduhoon.github.io/portfolio/profile%20photo/PROFILE.jpg">
-    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="loader" aria-hidden="true">
+        <div class="loader-mark">CD<span>.</span></div>
+        <div class="loader-line"><span></span></div>
+    </div>
+
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header">
-        <div class="container">
-            <a class="logo" href="#home" aria-label="Chirag Duhoon, home">CD<span>.</span></a>
-            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
-                <i class="ph ph-list" aria-hidden="true"></i><i class="ph ph-x" aria-hidden="true"></i>
-            </button>
-            <nav class="nav" id="primary-nav" aria-label="Primary">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <a class="button nav-cta" href="#contact">Get in touch</a>
-        </div>
+        <a class="logo" href="#home" aria-label="Go to home">CD<span>.</span></a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="mailto:chiragduhoon.work@gmail.com">Let's talk <span>↗</span></a>
     </header>
 
-    <main id="main">
-        <section class="hero container" id="home">
-            <div class="hero-copy">
-                <h1 class="reveal">Chirag<br>Duhoon</h1>
-                <p class="lead reveal" style="--i: 1">AI engineering student at Bennett University. I build computer vision and real-time AI systems, from drone missions to hospital triage.</p>
-                <div class="hero-actions reveal" style="--i: 2">
-                    <a class="button button-primary" href="#projects">View projects</a>
-                    <a class="button" href="resume.pdf" download="Chirag_Duhoon_Resume.pdf">Download resume <i class="ph ph-download-simple" aria-hidden="true"></i></a>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy reveal">
+                <div class="eyebrow"><span></span>Hello, I'm</div>
+                <h1>Chirag<br><em>Duhoon.</em></h1>
+                <div class="hero-role"><span>AI Engineering Student</span><i></i><span>Bennett University</span></div>
+                <p class="motto">Break It. Fix It. <strong>Build It Better.</strong></p>
+                <p class="hero-intro">Passionate about Artificial Intelligence, Computer Vision, Machine Learning, and building technology that solves real-world problems.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">View Projects <span>↘</span></a>
+                    <a class="button button-secondary" href="resume.pdf" download="Chirag_Duhoon_Resume.pdf">Download Résumé <span>↓</span></a>
+                    <a class="button button-secondary" href="#contact">Contact Me <span>↗</span></a>
+                </div>
+                <div class="hero-meta">
+                    <span><i></i> Available for opportunities</span>
+                    <span>Based in India</span>
                 </div>
             </div>
-            <div class="hero-visual reveal" style="--i: 2">
+
+            <div class="hero-visual reveal">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="profile-glow"></div>
                 <div class="profile-frame">
-                    <img src="profile%20photo/PROFILE.jpg" alt="Portrait of Chirag Duhoon" width="880" height="1100" fetchpriority="high">
+                    <img src="profile%20photo/PROFILE.jpg" alt="Chirag Duhoon" fetchpriority="high">
+                    <div class="profile-shade"></div>
                 </div>
             </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span>Scroll to explore</a>
         </section>
 
         <section class="section" id="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="section-head reveal">
-                        <h2>Curiosity, engineered into working systems.</h2>
-                    </div>
-                    <div class="about-copy reveal" style="--i: 1">
-                        <p>I am a B.Tech Artificial Intelligence student at Bennett University. Most of my work is in computer vision and applied machine learning: detection models, OCR pipelines, and dashboards that put them in front of people.</p>
-                        <p>I compete in hackathons and drone challenges, teach machine learning and databases at the Aero AI Club, and spend the rest of my time on data structures and algorithms.</p>
-                        <a class="text-link" href="#projects">See the projects <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-                    </div>
+            <div class="section-kicker reveal"><span>01</span><p>Get to know me</p></div>
+            <div class="about-layout">
+                <div class="section-title reveal">
+                    <h2>Curiosity engineered<br>into <em>impact.</em></h2>
                 </div>
-                <dl class="facts">
-                    <div class="reveal"><dt>Degree</dt><dd>B.Tech in Artificial Intelligence</dd></div>
-                    <div class="reveal" style="--i: 1"><dt>University</dt><dd>Bennett University, India</dd></div>
-                    <div class="reveal" style="--i: 2"><dt>Community</dt><dd>Core member, Aero AI Club</dd></div>
-                    <div class="reveal" style="--i: 3"><dt>Practice</dt><dd><a href="https://leetcode.com/u/alien07/" target="_blank" rel="noreferrer">100+ LeetCode problems</a></dd></div>
-                </dl>
+                <div class="about-copy reveal">
+                    <p class="lead">I'm an AI Engineering student passionate about solving problems, building intelligent systems, and continuously learning new technologies.</p>
+                    <p>I enjoy turning ideas into real-world solutions through AI, software development, and innovation. My work sits at the intersection of practical engineering, creative problem-solving, and emerging technology.</p>
+                    <a class="text-link" href="#projects">Explore my work <span>↘</span></a>
+                </div>
+            </div>
+            <div class="facts-grid">
+                <article class="fact-card reveal">
+                    <span>01</span><small>Name</small><strong>Chirag Duhoon</strong>
+                </article>
+                <article class="fact-card reveal">
+                    <span>02</span><small>University</small><strong>Bennett University</strong>
+                </article>
+                <article class="fact-card reveal">
+                    <span>03</span><small>Degree</small><strong>B.Tech in Artificial Intelligence</strong>
+                </article>
+                <article class="fact-card reveal">
+                    <span>04</span><small>Community</small><strong>Core Member, Aero AI Club</strong>
+                </article>
+            </div>
+            <div class="stats-band reveal">
+                <div class="stat"><strong data-count="100" data-suffix="+">0</strong><small>LeetCode Problems</small></div>
+                <div class="stat"><strong data-count="1" data-prefix="₹" data-suffix="L+">0</strong><small>Prize Winnings</small></div>
+                <div class="stat"><strong data-count="5" data-suffix="+">0</strong><small>AI Projects Built</small></div>
+                <div class="stat"><strong data-count="3" data-suffix="x">0</strong><small>Hackathon Podiums</small></div>
             </div>
         </section>
 
-        <section class="section" id="skills">
-            <div class="container skills-grid">
-                <div class="section-head reveal">
-                    <h2>Tools I use to turn ideas into systems.</h2>
-                    <p>From training a model to shipping the demo that shows it working.</p>
-                </div>
-                <div>
-                    <div class="skill-group reveal">
-                        <h3>AI and machine learning</h3>
-                        <ul class="tags"><li>Machine learning</li><li>Deep learning</li><li>Computer vision</li><li>YOLO</li><li>OpenCV</li><li>TensorFlow</li></ul>
-                    </div>
-                    <div class="skill-group reveal" style="--i: 1">
-                        <h3>Programming</h3>
-                        <ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Data structures</li><li>Algorithms</li></ul>
-                    </div>
-                    <div class="skill-group reveal" style="--i: 2">
-                        <h3>Tools and platforms</h3>
-                        <ul class="tags"><li>Git and GitHub</li><li>VS Code</li><li>Streamlit</li><li>Flask</li><li>FastAPI</li><li>React</li><li>MySQL</li><li>Jupyter</li></ul>
-                    </div>
-                </div>
+        <section class="section skills-section" id="skills">
+            <div class="section-kicker reveal"><span>02</span><p>Technical toolkit</p></div>
+            <div class="skills-heading reveal">
+                <div class="section-title"><h2>Tools I use to turn<br>ideas into <em>systems.</em></h2></div>
+                <p>From model training to polished demos, I work across the stack to make intelligent ideas useful.</p>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-card reveal">
+                    <div class="skill-card-head"><span>01</span><div class="skill-icon">⌁</div></div>
+                    <h3>AI & Machine Learning</h3>
+                    <div class="tags"><span>Machine Learning</span><span>Deep Learning</span><span>Computer Vision</span><span>YOLO</span><span>OpenCV</span><span>TensorFlow</span></div>
+                </article>
+                <article class="skill-card reveal">
+                    <div class="skill-card-head"><span>02</span><div class="skill-icon">&lt;/&gt;</div></div>
+                    <h3>Programming</h3>
+                    <div class="tags"><span>C++</span><span>C</span><span>Python</span><span>Data Structures</span><span>Algorithms</span></div>
+                </article>
+                <article class="skill-card reveal">
+                    <div class="skill-card-head"><span>03</span><div class="skill-icon">✦</div></div>
+                    <h3>Tools & Platforms</h3>
+                    <div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Streamlit</span><span>Flask</span><span>MySQL</span><span>Jupyter Notebook</span></div>
+                </article>
             </div>
         </section>
 
         <section class="section" id="projects">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Projects built with purpose.</h2>
-                    <p>Practical AI systems designed around real problems, with working demos.</p>
-                </div>
+            <div class="section-kicker reveal"><span>03</span><p>Selected work</p></div>
+            <div class="projects-heading reveal">
+                <div class="section-title"><h2>Projects built with<br><em>purpose.</em></h2></div>
+                <p>Practical AI systems designed around real-world challenges.</p>
+            </div>
 
-                <article class="project-lead">
-                    <div class="shots reveal">
-                        <button class="shot lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221604.png"><img src="sanjeevani/Screenshot 2026-06-25 221604.png" alt="Sanjeevani doctor dashboard with patient queue and AI clinical summary" loading="lazy"></button>
-                        <button class="shot lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221537.png"><img src="sanjeevani/Screenshot 2026-06-25 221537.png" alt="Sanjeevani patient assessment with AI risk classification" loading="lazy"></button>
-                        <button class="shot lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221613.png"><img src="sanjeevani/Screenshot 2026-06-25 221613.png" alt="Sanjeevani hospital bed management dashboard" loading="lazy"></button>
+            <article class="featured-project reveal">
+                <div class="project-gallery project-food">
+                    <button class="gallery-main lightbox-trigger" data-image="gallery/FOOD1.jpeg" aria-label="View food detection project image"><img src="gallery/FOOD1.jpeg" alt="Indian food detection project interface" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD2.jpeg" aria-label="View food classification image"><img src="gallery/FOOD2.jpeg" alt="Food classification result" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="gallery/FOOD3.jpeg" aria-label="View calorie estimation image"><img src="gallery/FOOD3.jpeg" alt="Calorie estimation result" loading="lazy"></button>
+                    <span class="project-number">01</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">Computer Vision · Featured Project</span>
+                    <h3>Indian Food Classification & Calorie Estimation</h3>
+                    <p>Built a YOLO-based computer vision system capable of detecting Indian food items and estimating calories through an interactive Streamlit dashboard.</p>
+                    <div class="feature-list">
+                        <span>Food Detection</span><span>Calorie Estimation</span><span>Multi-class Classification</span><span>Interactive Web Interface</span>
                     </div>
-                    <div class="project-body">
-                        <div class="reveal">
-                            <span class="project-type">Healthcare, real-time AI</span>
-                            <h3>Sanjeevani: AI healthcare triage</h3>
-                            <p>A triage platform that takes voice or text symptom input, classifies risk from critical to low, and pushes alerts to doctors over WebSockets so the most urgent patients are seen first. Deployed and live.</p>
-                            <div class="project-links">
-                                <a class="text-link" href="https://sanjeevani-frontend-zaah.onrender.com/" target="_blank" rel="noreferrer">Live demo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                                <a class="text-link" href="https://github.com/chiragduhoon/sanjeevani-ai-triage" target="_blank" rel="noreferrer">Source on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                        <dl class="project-meta reveal" style="--i: 1">
-                            <div><dt>What it does</dt><dd>Voice and text intake, AI risk classification, real-time doctor alerts, bed management dashboard.</dd></div>
-                            <div><dt>Stack</dt><dd>React, Vite, FastAPI, Python, WebSockets</dd></div>
-                        </dl>
+                    <div class="tech-row"><span>Python</span><span>YOLO</span><span>Streamlit</span><span>OpenCV</span><span>Pillow</span></div>
+                </div>
+            </article>
+
+            <article class="featured-project project-reverse reveal">
+                <div class="project-gallery single-image">
+                    <button class="gallery-main lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG" aria-label="View Deep Sight project image"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge team and project" loading="lazy"></button>
+                    <span class="project-number">02</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">Computer Vision · Hackathon Build</span>
+                    <h3>Vehicle Number Plate Detection & Recognition</h3>
+                    <p>Built during the Deep Sight Challenge using computer vision and OCR techniques to detect vehicle number plates and extract text under real-world conditions.</p>
+                    <div class="feature-list"><span>Plate Detection</span><span>OCR Recognition</span><span>Real-world Testing</span><span>Rapid Prototyping</span></div>
+                    <div class="tech-row"><span>Python</span><span>Computer Vision</span><span>OCR</span><span>OpenCV</span></div>
+                </div>
+            </article>
+            <article class="featured-project reveal">
+                <div class="project-gallery project-food">
+                    <button class="gallery-main lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221604.png" aria-label="View Sanjeevani doctor dashboard"><img src="sanjeevani/Screenshot 2026-06-25 221604.png" alt="Sanjeevani doctor dashboard with patient queue and AI clinical summary" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221537.png" aria-label="View patient assessment result"><img src="sanjeevani/Screenshot 2026-06-25 221537.png" alt="Patient assessment with AI risk classification" loading="lazy"></button>
+                    <button class="gallery-small lightbox-trigger" data-image="sanjeevani/Screenshot 2026-06-25 221613.png" aria-label="View hospital bed management"><img src="sanjeevani/Screenshot 2026-06-25 221613.png" alt="Hospital bed management dashboard" loading="lazy"></button>
+                    <span class="project-number">03</span>
+                </div>
+                <div class="project-info">
+                    <span class="project-type">AI · Healthcare · Featured Project</span>
+                    <h3>Sanjeevani — AI Healthcare Triage System</h3>
+                    <p>Real-time patient triage platform that accepts voice or text symptom input, classifies risk levels (Critical → Low) using AI, and instantly alerts doctors via WebSockets to prioritize critical cases.</p>
+                    <div class="feature-list">
+                        <span>Voice & Text Input</span><span>AI Risk Classification</span><span>Real-time Alerts</span><span>Doctor Dashboard</span>
                     </div>
+                    <div class="tech-row"><span>React</span><span>FastAPI</span><span>Python</span><span>WebSockets</span><span>Vite</span></div>
+                    <div class="project-links">
+                        <a class="text-link" href="https://sanjeevani-frontend-zaah.onrender.com/" target="_blank" rel="noreferrer">Live Demo <span>↗</span></a>
+                        <a class="text-link" href="https://github.com/chiragduhoon/sanjeevani-ai-triage" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="section achievements-section" id="achievements">
+            <div class="section-kicker reveal"><span>04</span><p>Milestones</p></div>
+            <div class="projects-heading reveal">
+                <div class="section-title"><h2>Built, competed,<br>and <em>delivered.</em></h2></div>
+                <p>A few moments where ambitious ideas met execution.</p>
+            </div>
+            <div class="achievement-grid">
+                <article class="achievement-card achievement-large reveal">
+                    <button class="achievement-image lightbox-trigger" data-image="gallery/DRONO-WAR1.jpg" aria-label="View Drono War image"><img src="gallery/DRONO-WAR1.jpg" alt="Drono War 1.0 award ceremony" loading="lazy"></button>
+                    <div class="achievement-copy"><span class="award-label">Winner · 2026</span><h3>Drono War 1.0</h3><ul><li>2nd Place FPV Racing</li><li>2nd Place Autonomous Mission</li><li>₹1,00,000+ Prize Winner</li></ul></div>
                 </article>
-
-                <div class="project-pair">
-                    <article class="project-card reveal">
-                        <div class="shots">
-                            <button class="shot shot-wide lightbox-trigger" data-image="gallery/FOOD1.jpeg"><img src="gallery/FOOD1.jpeg" alt="Indian food detection interface showing detected dishes" loading="lazy"></button>
-                            <button class="shot lightbox-trigger" data-image="gallery/FOOD2.jpeg"><img src="gallery/FOOD2.jpeg" alt="Food classification result" loading="lazy"></button>
-                            <button class="shot lightbox-trigger" data-image="gallery/FOOD3.jpeg"><img src="gallery/FOOD3.jpeg" alt="Calorie estimation result" loading="lazy"></button>
-                        </div>
-                        <div class="project-copy">
-                            <h3>Indian food classification and calorie estimation</h3>
-                            <p>A YOLO-based detector that recognises Indian dishes in a photo and estimates calories, wrapped in a Streamlit dashboard for interactive use.</p>
-                            <dl class="project-meta">
-                                <div><dt>Stack</dt><dd>Python, YOLO, OpenCV, Streamlit, Pillow</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-                    <article class="project-card reveal" style="--i: 1">
-                        <div class="shots">
-                            <button class="shot shot-solo lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge team presenting the number plate detection project" loading="lazy"></button>
-                        </div>
-                        <div class="project-copy">
-                            <h3>Vehicle number plate detection and recognition</h3>
-                            <p>Built in 18 hours at the Deep Sight Challenge: detects vehicle plates and reads the text with OCR under real lighting and camera conditions.</p>
-                            <dl class="project-meta">
-                                <div><dt>Stack</dt><dd>Python, OpenCV, OCR</dd></div>
-                            </dl>
-                        </div>
-                    </article>
-                </div>
+                <article class="achievement-card reveal">
+                    <button class="achievement-image lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG" aria-label="View Deep Sight image"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge" loading="lazy"></button>
+                    <div class="achievement-copy"><span class="award-label">Hackathon</span><h3>Deep Sight Challenge</h3><ul><li>4th Place</li><li>18-Hour Hackathon</li><li>Number Plate Detection Project</li></ul></div>
+                </article>
+                <article class="achievement-card reveal">
+                    <button class="achievement-image lightbox-trigger" data-image="gallery/GALLERY.jpg" aria-label="View TechBlaze image"><img src="gallery/GALLERY.jpg" alt="AI project showcase" loading="lazy"></button>
+                    <div class="achievement-copy"><span class="award-label">Appreciation</span><h3>Drono War 1.0</h3><ul><li>Appreciation Post</li><li>Featured Recognition</li><li>Community Highlight</li></ul></div>
+                </article>
             </div>
         </section>
 
-        <section class="section" id="achievements">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Built, competed, delivered.</h2>
-                </div>
-                <div class="achievements">
-                    <article class="achievement reveal">
-                        <button class="shot lightbox-trigger" data-image="gallery/DRONO-WAR1.jpg"><img src="gallery/DRONO-WAR1.jpg" alt="Drono War 1.0 award ceremony" loading="lazy"></button>
-                        <h3>Drono War 1.0</h3>
-                        <p class="result">2nd place, FPV racing and autonomous mission</p>
-                        <p>Two podium finishes at the drone challenge hosted at JIIT Noida, with Rs 1,00,000+ in prize money for the team.</p>
-                    </article>
-                    <article class="achievement reveal" style="--i: 1">
-                        <button class="shot lightbox-trigger" data-image="gallery/TECHBLAZE-WIN.jpg"><img src="gallery/TECHBLAZE-WIN.jpg" alt="Chirag holding the TechBlaze 1.0 second runner-up cheque" loading="lazy"></button>
-                        <h3>TechBlaze 1.0</h3>
-                        <p class="result">2nd runner-up</p>
-                        <p>Project showcase and competition.</p>
-                    </article>
-                    <article class="achievement reveal" style="--i: 2">
-                        <button class="shot lightbox-trigger" data-image="gallery/DEEPSIGHT.JPG"><img src="gallery/DEEPSIGHT.JPG" alt="Deep Sight Challenge team" loading="lazy"></button>
-                        <h3>Deep Sight Challenge</h3>
-                        <p class="result">4th place</p>
-                        <p>18-hour computer vision hackathon, number plate detection project.</p>
-                    </article>
-                </div>
+        <section class="section gallery-section" id="gallery">
+            <div class="section-kicker reveal"><span>05</span><p>Moments</p></div>
+            <div class="projects-heading reveal">
+                <div class="section-title"><h2>Moments that<br><em>made the journey.</em></h2></div>
+                <p>Sessions taught, teams led, and prizes brought home.</p>
             </div>
-        </section>
-
-        <section class="section" id="gallery">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Moments from the journey.</h2>
-                    <p>Sessions taught, teams led, and prizes brought home.</p>
-                </div>
-                <div class="gallery-grid">
-                    <button class="shot gallery-tall lightbox-trigger reveal" data-image="gallery/CLUB-SESSION.jpg"><img src="gallery/CLUB-SESSION.jpg" alt="Leading an Aero AI Club session in a classroom at Bennett University" loading="lazy"></button>
-                    <button class="shot lightbox-trigger reveal" style="--i: 1" data-image="gallery/TEACHING.jpg"><img src="gallery/TEACHING.jpg" alt="Teaching machine learning and databases at the whiteboard" loading="lazy"></button>
-                    <button class="shot lightbox-trigger reveal" style="--i: 2" data-image="gallery/TECHBLAZE-WIN.jpg"><img src="gallery/TECHBLAZE-WIN.jpg" alt="Receiving the TechBlaze 1.0 second runner-up cheque" loading="lazy"></button>
-                    <button class="shot lightbox-trigger reveal" style="--i: 1" data-image="gallery/DRONO-WINNERS.jpg"><img src="gallery/DRONO-WINNERS.jpg" alt="Drono War 1.0 winners holding prize cheques at JIIT Noida" loading="lazy"></button>
-                    <button class="shot lightbox-trigger reveal" style="--i: 2" data-image="gallery/DRONO-TEAM.jpg"><img src="gallery/DRONO-TEAM.jpg" alt="The team with drones under the Drono War banners" loading="lazy"></button>
-                    <button class="shot lightbox-trigger reveal" data-image="gallery/AEROAI-MIC.jpg"><img src="gallery/AEROAI-MIC.jpg" alt="Speaking at an Aero AI Club session" loading="lazy"></button>
-                    <button class="shot gallery-wide lightbox-trigger reveal" style="--i: 1" data-image="gallery/TECHBLAZE-GROUP.jpg"><img src="gallery/TECHBLAZE-GROUP.jpg" alt="TechBlaze 1.0 project showcase group photo" loading="lazy"></button>
-                </div>
+            <div class="gallery-grid">
+                <button class="gallery-item gallery-featured lightbox-trigger reveal" data-image="gallery/CLUB-SESSION.jpg" aria-label="View club session photo">
+                    <img src="gallery/CLUB-SESSION.jpg" alt="Chirag leading a club session in a classroom at Bennett University" loading="lazy">
+                    <span class="gallery-tag">Leading a club session</span>
+                </button>
+                <button class="gallery-item lightbox-trigger reveal" data-image="gallery/TEACHING.jpg" aria-label="View whiteboard teaching photo">
+                    <img src="gallery/TEACHING.jpg" alt="Chirag teaching machine learning and databases on a whiteboard" loading="lazy">
+                    <span class="gallery-tag">Teaching ML &amp; databases</span>
+                </button>
+                <button class="gallery-item lightbox-trigger reveal" data-image="gallery/TECHBLAZE-WIN.jpg" aria-label="View TechBlaze runner-up photo">
+                    <img src="gallery/TECHBLAZE-WIN.jpg" alt="Chirag holding the TechBlaze 1.0 Second Runner Up cheque" loading="lazy">
+                    <span class="gallery-tag">TechBlaze 1.0 · 2nd Runner Up</span>
+                </button>
+                <button class="gallery-item lightbox-trigger reveal" data-image="gallery/DRONO-WINNERS.jpg" aria-label="View Drono War winners photo">
+                    <img src="gallery/DRONO-WINNERS.jpg" alt="Drono War 1.0 winners holding prize cheques at JIIT Noida" loading="lazy">
+                    <span class="gallery-tag">Drono War · winners' circle</span>
+                </button>
+                <button class="gallery-item lightbox-trigger reveal" data-image="gallery/DRONO-TEAM.jpg" aria-label="View Drono War team photo">
+                    <img src="gallery/DRONO-TEAM.jpg" alt="Team with drones under Drono War banners" loading="lazy">
+                    <span class="gallery-tag">Drono War · the team</span>
+                </button>
+                <button class="gallery-item lightbox-trigger reveal" data-image="gallery/AEROAI-MIC.jpg" aria-label="View AeroAI session photo">
+                    <img src="gallery/AEROAI-MIC.jpg" alt="Chirag speaking with a microphone at an AeroAI Club session" loading="lazy">
+                    <span class="gallery-tag">AeroAI Club session</span>
+                </button>
+                <button class="gallery-item gallery-wide lightbox-trigger reveal" data-image="gallery/TECHBLAZE-GROUP.jpg" aria-label="View TechBlaze showcase group photo">
+                    <img src="gallery/TECHBLAZE-GROUP.jpg" alt="TechBlaze 1.0 project showcase group photo" loading="lazy">
+                    <span class="gallery-tag">TechBlaze showcase</span>
+                </button>
             </div>
         </section>
 
         <section class="section" id="certifications">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Certifications</h2>
-                </div>
-                <div class="cert-grid">
-                    <article class="cert reveal">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/CNN CERT.jpg"><img src="CERTIFICATES/CNN%20CERT.jpg" alt="Convolutional Neural Networks in Python certificate, Udemy" loading="lazy"></button>
-                        <h3>Convolutional Neural Networks in Python</h3>
-                        <p>Udemy</p>
-                    </article>
-                    <article class="cert reveal" style="--i: 1">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/PYTHON CERT.png"><img src="CERTIFICATES/PYTHON%20CERT.png" alt="Programming for Everybody certificate" loading="lazy"></button>
-                        <h3>Programming for Everybody: Getting Started with Python</h3>
-                        <p>Coursera, University of Michigan</p>
-                    </article>
-                    <article class="cert cert-extra">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/networking-basics.png"><img src="CERTIFICATES/networking-basics.png" alt="Networking Basics certificate, Cisco Networking Academy" loading="lazy"></button>
-                        <h3>Networking Basics</h3>
-                        <p>Cisco Networking Academy</p>
-                    </article>
-                    <article class="cert cert-extra">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/operating-systems.png"><img src="CERTIFICATES/operating-systems.png" alt="Operating Systems Basics certificate, Cisco Networking Academy" loading="lazy"></button>
-                        <h3>Operating Systems Basics</h3>
-                        <p>Cisco Networking Academy</p>
-                    </article>
-                    <article class="cert cert-extra">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/matlab-ode.png"><img src="CERTIFICATES/matlab-ode.png" alt="Solving ODEs with MATLAB certificate, MathWorks" loading="lazy"></button>
-                        <h3>Solving ODEs with MATLAB</h3>
-                        <p>MathWorks</p>
-                    </article>
-                    <article class="cert cert-extra">
-                        <button class="shot lightbox-trigger" data-image="CERTIFICATES/matlab-datatypes.png"><img src="CERTIFICATES/matlab-datatypes.png" alt="A Tour of MATLAB Data Types certificate, MathWorks" loading="lazy"></button>
-                        <h3>A Tour of MATLAB Data Types</h3>
-                        <p>MathWorks</p>
-                    </article>
-                </div>
-                <div class="cert-toggle-wrap reveal">
-                    <button class="button cert-toggle" aria-expanded="false" aria-controls="certifications">Show all 6 certifications</button>
-                </div>
-                <div class="coding-profile reveal">
-                    <div>
-                        <h3>LeetCode</h3>
-                        <p>100+ problems solved, focused on data structures and algorithms.</p>
-                    </div>
-                    <a class="button" href="https://leetcode.com/u/alien07/" target="_blank" rel="noreferrer">View profile <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                </div>
+            <div class="section-kicker reveal"><span>06</span><p>Continuous learning</p></div>
+            <div class="projects-heading reveal">
+                <div class="section-title"><h2>Learning that compounds<br>into <em>capability.</em></h2></div>
             </div>
+            <div class="certificate-grid">
+                <article class="certificate-card reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/CNN CERT.jpg" aria-label="View CNN certificate"><img src="CERTIFICATES/CNN%20CERT.jpg" alt="Deep Learning CNN certificate" loading="lazy"></button>
+                    <div><span>Deep Learning</span><h3>Convolutional Neural Networks in Python</h3><p>Udemy Certification</p></div>
+                </article>
+                <article class="certificate-card reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/PYTHON CERT.png" aria-label="View Python certificate"><img src="CERTIFICATES/PYTHON%20CERT.png" alt="Programming for Everybody certificate" loading="lazy"></button>
+                    <div><span>Programming</span><h3>Programming for Everybody</h3><p>Getting Started with Python</p></div>
+                </article>
+                <article class="certificate-card cert-extra reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/networking-basics.png" aria-label="View Networking Basics certificate"><img src="CERTIFICATES/networking-basics.png" alt="Networking Basics certificate, Cisco Networking Academy" loading="lazy"></button>
+                    <div><span>Networking</span><h3>Networking Basics</h3><p>Cisco Networking Academy</p></div>
+                </article>
+                <article class="certificate-card cert-extra reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/operating-systems.png" aria-label="View Operating Systems Basics certificate"><img src="CERTIFICATES/operating-systems.png" alt="Operating Systems Basics certificate, Cisco Networking Academy" loading="lazy"></button>
+                    <div><span>Systems</span><h3>Operating Systems Basics</h3><p>Cisco Networking Academy</p></div>
+                </article>
+                <article class="certificate-card cert-extra reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/matlab-ode.png" aria-label="View MATLAB Differential Equations certificate"><img src="CERTIFICATES/matlab-ode.png" alt="Solving ODEs with MATLAB certificate, MathWorks" loading="lazy"></button>
+                    <div><span>Numerical Computing</span><h3>Solving ODEs with MATLAB</h3><p>MathWorks Self-Paced Training</p></div>
+                </article>
+                <article class="certificate-card cert-extra reveal">
+                    <button class="certificate-image lightbox-trigger" data-image="CERTIFICATES/matlab-datatypes.png" aria-label="View MATLAB Data Types certificate"><img src="CERTIFICATES/matlab-datatypes.png" alt="A Tour of MATLAB Data Types certificate, MathWorks" loading="lazy"></button>
+                    <div><span>Numerical Computing</span><h3>A Tour of MATLAB Data Types</h3><p>MathWorks Self-Paced Training</p></div>
+                </article>
+            </div>
+            <div class="cert-toggle-wrap reveal">
+                <button class="button button-secondary cert-toggle" aria-expanded="false">See all certifications <span>+4</span></button>
+            </div>
+            <article class="coding-profile reveal">
+                <div><span class="code-bracket">&lt;/&gt;</span><div><small>Coding Profile</small><h3>LeetCode</h3></div></div>
+                <p><strong>100+</strong> problems solved with a focus on Data Structures, Algorithms, and competitive programming.</p>
+                <a class="button button-secondary" href="https://leetcode.com/u/chiragduhoon/" target="_blank" rel="noreferrer">View Profile <span>↗</span></a>
+            </article>
         </section>
 
-        <section class="section" id="contact">
-            <div class="container contact-inner">
-                <h2 class="reveal">Have an idea? Let's make it real.</h2>
-                <p class="reveal" style="--i: 1">Open to internships, research collaborations, and ambitious AI projects. Email is the fastest way to reach me.</p>
-                <a class="contact-email reveal" style="--i: 2" href="mailto:chiragduhoon.work@gmail.com">chiragduhoon.work@gmail.com <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                <div class="social-links reveal" style="--i: 3">
-                    <a href="https://www.linkedin.com/in/chirag-duhoon-790b48404/" target="_blank" rel="noreferrer">LinkedIn <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                    <a href="https://github.com/chiragduhoon" target="_blank" rel="noreferrer">GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                    <a href="https://leetcode.com/u/alien07/" target="_blank" rel="noreferrer">LeetCode <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/chiragduhoon1" target="_blank" rel="noreferrer">Instagram <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <section class="contact section" id="contact">
+            <div class="contact-inner reveal">
+                <span class="contact-orbit"></span>
+                <div class="section-kicker"><span>07</span><p>Let's build something</p></div>
+                <h2>Have an idea?<br><em>Let's make it real.</em></h2>
+                <p>I'm always open to discussing AI, ambitious projects, internships, and opportunities to create something meaningful.</p>
+                <a class="contact-email" href="mailto:chiragduhoon.work@gmail.com">chiragduhoon.work@gmail.com <span>↗</span></a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/chirag-duhoon-790b48404/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+                    <a href="https://github.com/chiragduhoon" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+                    <a href="https://leetcode.com/u/chiragduhoon/" target="_blank" rel="noreferrer">LeetCode <span>↗</span></a>
+                    <a href="https://instagram.com/chiragduhoon1" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <a class="logo" href="#home">CD<span>.</span></a>
-            <p>Designed and built by Chirag Duhoon. <span id="year"></span></p>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="#home">Back to top</a>
-            </div>
-        </div>
+    <footer>
+        <a class="logo" href="#home">CD<span>.</span></a>
+        <p>Designed & built by Chirag Duhoon · <span id="year"></span></p>
+        <a href="#home">Back to top ↑</a>
     </footer>
 
-    <dialog class="lightbox" aria-label="Expanded image">
-        <button class="lightbox-close" aria-label="Close">Close <i class="ph ph-x" aria-hidden="true"></i></button>
-        <figure>
-            <img src="" alt="">
-            <figcaption></figcaption>
-        </figure>
+    <dialog class="lightbox">
+        <button class="lightbox-close" aria-label="Close image">×</button>
+        <img src="" alt="Expanded project view">
     </dialog>
 
     <script src="script.js"></script>

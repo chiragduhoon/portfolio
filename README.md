@@ -1,48 +1,45 @@
-# Chirag Duhoon, Portfolio
+<div align="center">
 
-Live: [chiragduhoon.github.io/portfolio](https://chiragduhoon.github.io/portfolio/)
+# Chirag Duhoon — Portfolio
 
-Personal portfolio of an AI engineering student at Bennett University: projects, achievements, certifications and contact.
+**🌐 Live: [chiragduhoon.github.io/portfolio](https://chiragduhoon.github.io/portfolio/)**
+
+Personal portfolio — AI engineering student at Bennett University.
+Projects, achievements, certifications, and a bit of personality.
+
+</div>
+
+---
 
 ## What's inside
 
-- Selected work: Sanjeevani (AI healthcare triage, live demo), Indian food classification and calorie estimation, vehicle number plate detection.
-- Achievements: Drono War 1.0 (2nd place FPV racing and autonomous mission, Rs 1,00,000+ prize), TechBlaze 1.0 second runner-up, Deep Sight Challenge.
-- Certifications, photo gallery, contact, privacy policy, terms and a custom 404 page.
+- **Selected work** — Sanjeevani (AI healthcare triage), Indian food
+  classification & calorie estimation, vehicle number-plate detection.
+- **Achievements** — Drono War 1.0 winner (2nd place FPV racing + autonomous
+  mission, ₹1,00,000+ prize), Deep Sight Challenge hackathon.
+- **Certifications, gallery, and contact.**
 
 ## Built with
 
-Plain HTML, CSS and vanilla JavaScript. No framework, no build step. Hosted on GitHub Pages.
+Plain **HTML, CSS, and vanilla JavaScript** — no frameworks, no build step,
+no dependencies. Hosted on GitHub Pages.
 
-- Geist typeface via Google Fonts, Phosphor icons via CDN
-- Scroll reveal, active nav tracking and the sticky header all use `IntersectionObserver` (no scroll listeners)
-- Native `<dialog>` lightbox with captions
-- Respects `prefers-reduced-motion`, keyboard accessible, skip link, visible focus states
+Details worth a look in [script.js](script.js):
+
+- Canvas **starfield** background
+- Scroll-reveal animations and section tracking via `IntersectionObserver`
+- Animated counters, scroll-progress bar, gallery **lightbox**
+- Respects `prefers-reduced-motion` and falls back cleanly on touch devices
 
 ## Run locally
 
 ```bash
 git clone https://github.com/chiragduhoon/portfolio.git
 cd portfolio
-python -m http.server 8000
+python -m http.server 8000   # or just open index.html
 ```
-
-Then open `http://localhost:8000`.
-
-## Custom domain
-
-To serve the site from your own domain instead of `chiragduhoon.github.io/portfolio`:
-
-1. Buy a domain from any registrar.
-2. In the registrar's DNS settings add either:
-   - a `CNAME` record for `www` pointing to `chiragduhoon.github.io`, and
-   - four `A` records for the apex (`@`) pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
-3. Add a file named `CNAME` to the root of this repo containing only the domain, for example `www.chiragduhoon.com`.
-4. In the repo go to Settings, Pages, set the custom domain, and turn on "Enforce HTTPS" once the certificate is issued.
-5. Update the `<link rel="canonical">` and `og:url` tags in `index.html`, and change the absolute `/portfolio/` paths in `404.html` to `/`.
-
-GitHub's reference: [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 ## A note on reuse
 
-Read the code and borrow techniques freely. The personal content (photos, resume, certificates and text) is mine and not for reuse.
+Feel free to read the code and borrow techniques. The personal content —
+photos, resume, certificates, and text — is mine and not for reuse.
